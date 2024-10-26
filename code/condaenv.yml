@@ -1,0 +1,5 @@
+name: bart-gp-article
+channels:
+  - conda-forge
+dependencies:
+  - python < 3.13

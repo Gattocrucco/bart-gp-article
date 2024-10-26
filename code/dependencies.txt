@@ -1,0 +1,15 @@
+polars[pyarrow,pandas]<2
+tqdm<5
+matplotlib<4
+numpy<3
+gvar<14
+lsqfitgp<0.22
+scipy<2
+statsmodels<0.15
+jax<0.5
+rpy2<4
+wrapt_timeout_decorator<2
+pandas<3
+joblib<2
+numba<0.61
+colorspacious<2
