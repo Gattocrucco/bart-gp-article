@@ -68,6 +68,7 @@ Applications\\(DISIA), University of Florence\\
 \let\oldmarginpar\marginpar
 \renewcommand{\marginpar}[1]{\oldmarginpar{\sffamily\scriptsize #1}}
 \setlength{\marginparwidth}{3.5cm}
+\renewcommand{\marginpar}[1]{\relax} % hide marginpars
 
 \begin{document}
     
@@ -268,7 +269,7 @@ Applications\\(DISIA), University of Florence\\
 
     \paragraph{Computational speed aspects}
     
-    The typical bottlenecks are, at each step of the iterative algorithm that maximizes or samples the posterior for $\theta$ in \autoref{eq:thetapost}, computing the decomposition of the prior covariance matrix $\Sigma_{xx}(\theta)$ and computing the gradient of the log-determinant term in the log-likelihood. Their computational complexities are respectively $O(n^2\max(n,p))$ and $O(n^2\max(n,d))$ where $p$ and $d$ are the dimensionalities of $x$ and $\theta$. As a reference, on my personal machine with $n=\num{10000}$ and 64~bit floating point, the matrix occupies \SI1{GB} of RAM, the Cholesky decomposition takes \SI2s, and diagonalization takes \SI{80}s. Due to the quadratic memory and cubic time scaling, it is challenging to significantly increase $n$ and $p$ even with larger computers. Thus one of the drawbacks of GP regression is that in general it does not scale to large datasets.
+    The typical bottlenecks are, at each step of the iterative algorithm that maximizes or samples the posterior for $\theta$ in \autoref{eq:thetapost}, computing the decomposition of the prior covariance matrix $\Sigma_{xx}(\theta)$ and computing the gradient of the log-determinant term in the log-likelihood. Their computational complexities are respectively $O(n^2\max(n,p))$ and $O(n^2\max(n,d))$\marginpar{Not sure about $d$, maybe goes away with backprop.} where $p$ and $d$ are the dimensionalities of $x$ and $\theta$. As a reference, on my personal machine with $n=\num{10000}$ and 64~bit floating point, the matrix occupies \SI1{GB} of RAM, the Cholesky decomposition takes \SI2s, and diagonalization takes \SI{80}s. Due to the quadratic memory and cubic time scaling, it is challenging to significantly increase $n$ and $p$ even with larger computers. Thus one of the drawbacks of GP regression is that in general it does not scale to large datasets.
     
     \subsection{The BART prior correlation function}
     \label{sec:limform}
@@ -2677,6 +2678,6 @@ Applications\\(DISIA), University of Florence\\
 
     \section{Code and data}
 
-    The full program and data files used in this article are not currently provided online, but I intend to do so in the future. Write me for specific inquiries about the code.\marginpar{TODO: link the repo when I upload it, put it on zenodo.} The GP versions of BART and BCF are ready to use in the Python package \texttt{lsqfitgp} \autocite{petrillo2024c}. At the time of writing, the data of \textcite{chipman2010} I used in \autoref{sec:benchmark} is available at \url{https://sites.google.com/site/hughchipman/Home}.\marginpar{include the data in the repo, and put this link in the repo readme.}
+    The results of this article are reproducible with \textcite{petrillo2024d}. The GP versions of BART and BCF are ready to use in the Python package \texttt{lsqfitgp} \autocite{petrillo2024c}.
         
 \end{document}

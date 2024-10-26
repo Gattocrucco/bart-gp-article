@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/878914392.svg)](https://doi.org/10.5281/zenodo.13997070)
+
 # bart-gp-article
 
 Code to reproduce the results in Petrillo (2024), "On the Gaussian process limit of Bayesian Additive Regression Trees".
