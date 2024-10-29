@@ -2,7 +2,7 @@
 
 # bart-gp-article
 
-Code to reproduce the results in Petrillo (2024), "On the Gaussian process limit of Bayesian Additive Regression Trees".
+Code to reproduce the results in Petrillo (2024), "On the Gaussian process limit of Bayesian Additive Regression Trees", [arXiv:2410.20289](https://arxiv.org/abs/2410.20289).
 
 ## Files setup
 
